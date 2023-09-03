@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Card, CardHeader, CardContent, Typography, Grid } from '@material-ui/core'
 import useStyles from './styles'
-import Form from './Form/Form'
-import List from './List/List'
-import { BudgetAlchemyContext } from '../../context/context'
+import Form from './Form'
+import List from './List'
+import { BudgetAlchemyContext } from '../../context/BudgetAlchemyContext'
 
 const Main = () => {
   const classes = useStyles()

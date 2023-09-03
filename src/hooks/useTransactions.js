@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { BudgetAlchemyContext } from './context/context'
-import { incomeCategories, expenseCategories, resetCategories } from './constants/categories'
+import { BudgetAlchemyContext } from '../context/BudgetAlchemyContext'
+import { incomeCategories, expenseCategories, resetCategories } from '../constants/categories'
 
 const useTransactions = (title) => {
   resetCategories()

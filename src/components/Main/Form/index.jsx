@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { TextField, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import { v4 as uuidv4 } from 'uuid'
 import useStyles from './styles'
-import { BudgetAlchemyContext } from '../../../context/context'
+import { BudgetAlchemyContext } from '../../../context/BudgetAlchemyContext'
 import { incomeCategories, expenseCategories } from '../../../constants/categories'
 import formatDate from '../../../utils/formatDate'
 

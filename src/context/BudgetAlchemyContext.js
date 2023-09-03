@@ -1,8 +1,23 @@
 import React, { useReducer, createContext } from 'react'
-import contextReducer from './contextReducer'
+
+const contextReducer = (state, action) => {
+  let transactions
+
+  switch (action.type) {
+    case 'DELETE_TRANSACTION':
+      transactions = state.filter((t) => t.id !== action.payload)
+      localStorage.setItem('transactions', JSON.stringify(transactions))
+      return transactions
+    case 'ADD_TRANSACTION':
+      transactions = [action.payload, ...state]
+      localStorage.setItem('transactions', JSON.stringify(transactions))
+      return transactions
+    default:
+      return state
+  }
+}
 
 const initialState = JSON.parse(localStorage.getItem('transactions')) || []
-
 export const BudgetAlchemyContext = createContext(initialState)
 
 export const Provider = ({ children }) => {
