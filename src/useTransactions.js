@@ -28,3 +28,5 @@ const useTransactions = (title) => {
 
   return { total, chartData }
 }
+
+export default useTransactions

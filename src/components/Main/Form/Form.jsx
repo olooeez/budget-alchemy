@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
+import { TextField, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import { v4 as uuidv4 } from 'uuid'
 import useStyles from './styles'
 import { BudgetAlchemyContext } from '../../../context/context'
@@ -29,11 +29,6 @@ const Form = () => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Typography align='center' variant='subtitle2' gutterBottom>
-          ...
-        </Typography>
-      </Grid>
       <Grid item xs={6}>
         <FormControl fullWidth>
           <InputLabel>Type</InputLabel>
