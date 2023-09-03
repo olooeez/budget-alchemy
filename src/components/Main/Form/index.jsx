@@ -5,6 +5,7 @@ import useStyles from './styles'
 import { BudgetAlchemyContext } from '../../../context/BudgetAlchemyContext'
 import { incomeCategories, expenseCategories } from '../../../constants/categories'
 import formatDate from '../../../utils/formatDate'
+import CustomizedSnackbar from '../../Snackbar'
 
 const initialState = {
   amount: '',
@@ -17,18 +18,21 @@ const Form = () => {
   const classes = useStyles()
   const [formData, setFormData] = useState(initialState)
   const { addTransaction } = useContext(BudgetAlchemyContext)
+  const [open, setOpen] = useState(false)
 
   const createTransaction = () => {
     const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
 
     addTransaction(transaction)
     setFormData(initialState)
+    setOpen(true)
   }
 
   const selectedCategories = formData.type === 'Income' ? incomeCategories : expenseCategories
 
   return (
     <Grid container spacing={2}>
+      <CustomizedSnackbar open={open} setOpen={setOpen} />
       <Grid item xs={6}>
         <FormControl fullWidth>
           <InputLabel>Type</InputLabel>
