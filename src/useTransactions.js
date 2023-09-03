@@ -14,7 +14,7 @@ const useTransactions = (title) => {
     const category = categories.find((c) => c.type === tpt.category)
 
     if (category) category.amount += tpt.amount
-  });
+  })
 
   const filteredCategories = categories.filter((c) => c.amount > 0)
 
@@ -28,5 +28,3 @@ const useTransactions = (title) => {
 
   return { total, chartData }
 }
-
-export default useTransactions

@@ -6,10 +6,10 @@ import useStyles from './styles'
 import useTransactions from '../../useTransactions'
 
 const Details = ({ title }) => {
-  Chart.register(ArcElement, Tooltip, Legend);
+  Chart.register(ArcElement, Tooltip, Legend)
 
-  const classes = useStyles();
-  const { total, chartData } = useTransactions(title);
+  const classes = useStyles()
+  const { total, chartData } = useTransactions(title)
 
   return (
     <Card className={title === 'Income' ? classes.income : classes.expenses}>
